@@ -1,0 +1,171 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 0.2fr 1.8fr 1fr;
+  column-gap: 10px;
+}
+
+.one {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.two {
+  padding: 10px 0 0 5px;
+}
+
+.one,
+.two,
+.three {
+  padding-bottom: 0px;
+}
+
+h3 {
+  color: #9d9a99;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+border {
+  padding: 5px;
+}
+
+aside {
+  border-left: 1px solid #f1f1f1;
+  height: fit-content;
+  margin-top: 20px;
+  padding-bottom: 0;
+
+}
+
+ul {
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
+  padding-left: 0;
+
+}
+
+aside li {
+  text-align: start;
+  padding: 10px;
+  color: #e95c51;
+  list-style: none;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 20px;
+
+}
+
+address {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 1/4;
+  font-weight: 500;
+  font-style: normal;
+  padding-block-end: 20px;
+
+}
+
+a {
+  color: #e74c48;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.row-2 {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  border: 1px solid #9d9a99;
+  border-radius: 3px;
+}
+
+.email,
+.fb,
+.twwiter {
+  font-size: 50px;
+  padding-left: 10px;
+
+}
+
+.email1,
+.fb1,
+.twitter1 {
+  padding-top: 10px;
+  padding-left: 10px;
+
+}
+
+img {
+  padding-top: 40px
+}
+
+div>p {
+  color: #ada7bf;
+  margin-bottom: 0px;
+  font-size: smaller;
+}
+
+
+
+@media (max-width:990px) {
+
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+}
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    display: inline;
+    grid-template-rows: 4fr 1fr;
+
+    gap: 10px;
+    padding: 10px;
+
+  }
+
+  address {
+    display: block;
+  }
+
+  .one,
+  .two,
+  .three li {
+    text-align: center;
+  }
+
+  .email,
+  .fb,
+  .twwiter {
+    text-align: end;
+    padding-left: 25px;
+  }
+
+  .fb1,
+  .email1,
+  .twitter1 {
+    text-align: start;
+    padding-left: 30px;
+
+  }
+
+  aside li {
+    text-align: end;
+  }
+
+  .row-2 {
+    width: 70%;
+    padding: auto;
+    margin: auto;
+    border-radius: 20px;
+  }
+
+}
