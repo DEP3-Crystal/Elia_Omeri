@@ -1,0 +1,67 @@
+body {
+    background: url('https://raw.githubusercontent.com/WebToLearn/personal-page-css-workshop/master/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.white{
+    background-color:#ffffff;
+    height: 20rem;
+    
+
+    
+  
+
+}
+
+.round-border {
+    border-radius: 50%;
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 2.5px;
+    background-color: #e0e5ed;
+    border-color: #797d85;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 177px;
+}
+
+.bell {
+    position: absolute;
+    margin-left: 46.4%;
+    margin-top: 195px;
+    width: 85%;
+    height: 85%;
+    justify-content: center;
+    color:#7f8185;
+}
+.round-border , .bell ,.notification{
+    top: 90px;
+}
+.fa-bell-o:before {
+
+    font-size: 400%;
+}
+
+.notification {
+    border-radius: 50%;
+    background-color: #f95a25;
+    width: 30px;
+    height: 28px;
+    position: absolute;
+    margin-left:750px;
+    margin-top: 168px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 4px;
+    justify-content: center;
+
+}
