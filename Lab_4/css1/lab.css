@@ -1,0 +1,255 @@
+html {
+    background-color: #f6f3ea;
+}
+
+.header-wrapper {
+    display: grid;
+}
+
+.div-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end;
+}
+
+h1 {
+    display: inline;
+    padding-top: 20px;
+    text-align: right;
+}
+
+.vertical {
+    color: red;
+    writing-mode: vertical-lr;
+    padding-left: 0;
+    margin-right: 0;
+}
+
+a {
+    color: black;
+    text-transform: uppercase;
+}
+
+hr {
+    border: 2px solid black;
+}
+
+.follow-links {
+    font-size: smaller;
+}
+
+
+@media(min-width:990px) {
+
+    html {
+        transform: rotate(-45deg);
+        overflow: hidden;
+    }
+
+    .header-wrapper {
+
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 10px;
+        margin: 10px 200px 0px 200px;
+    }
+
+    .div-1 {
+        grid-column: 1/3;
+        grid-row: 1/3;
+        justify-self: flex-end;
+    }
+
+    h1.vertical {
+        padding-left: 0px;
+        padding-top: 0;
+    }
+
+    .demo-list {
+        grid-row: 3/4;
+        grid-column: 1/2;
+        text-align: justify;
+        width: 360px;
+    }
+
+    .demo-list li {
+        border-top: solid black 5px;
+        padding: 5px 0;
+    }
+
+    .demo-list li:last-child {
+        border-bottom: solid black 5px;
+    }
+
+    .follow-links {
+        grid-column: 2 / 4;
+        grid-row: 3/4;
+        width: 100%;
+        justify-self: left;
+        align-self: end;
+        border-bottom: 20px solid red;
+        padding-bottom: 5px;
+        height: fit-content;
+        margin-bottom: 0px;
+    }
+
+    .workshop-link {
+        border-top: 4px solid black;
+        border-bottom: 4px solid black;
+        grid-column: 3;
+        grid-row: 2/3;
+        place-self: end start;
+        margin-bottom: 35px;
+        font-size: smaller;
+        width: 100%;
+    }
+
+    .workshop-link ul {
+        padding-left: 26px;
+        width: 100%;
+    }
+}
+
+@media(min-width:768px) and (max-width:990px) {
+
+
+
+    .header-wrapper {
+
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        transform: rotate(0deg);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .div-1 {
+
+
+        padding-right: 40px;
+
+
+    }
+
+    .demo-list {
+        grid-row: 3/4;
+        grid-column: 1/2;
+        border-top: 3px;
+        width: 90%;
+    }
+
+    .demo-list li {
+        border-top: solid black 5px;
+        padding: 5px 0;
+    }
+
+    .demo-list li:last-child {
+        border-bottom: solid black 5px;
+    }
+
+    a {
+        border-top: 3px;
+
+
+    }
+
+    .left-ul {
+        padding-right: 190px;
+        padding-top: 30px;
+        width: 31%;
+    }
+
+    .demo-list h2 {
+        width: 41%;
+    }
+
+    .follow-links {
+        grid-column: 1 / 3;
+        grid-row: 3/4;
+        justify-self: end;
+        width: 69%;
+        border-bottom: 20px solid red;
+        height: fit-content;
+        align-self: end;
+    }
+
+
+    .workshop-link {
+        border-top: 4px solid black;
+        border-bottom: 4px solid black;
+        grid-column: 2/-1;
+        grid-row: 1/2;
+        place-self: end start;
+        width: 100%;
+
+    }
+
+    .workshop-link ul {
+
+        padding-left: 38px;
+
+    }
+}
+
+@media (max-width:768px) {
+    .header-wrapper {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        transform: rotate(0deg);
+    }
+
+    .div-1 {
+        grid-template-rows: 1/2;
+        width: 75%;
+    }
+
+    h1 {
+        display: inline;
+        padding-top: 20px;
+        text-align: right;
+        grid-template-rows: 1/2;
+
+    }
+
+    .follow-links {
+
+        grid-row: 1/2;
+        margin-bottom: -287px;
+        margin-top: 236px;
+        width: 37%;
+        padding-left: 60px;
+        justify-self: left;
+
+    }
+
+    .demo-list {
+
+        margin-top: 30px;
+        padding-left: 98px;
+        width: 102%;
+    }
+
+    .demo-list ul {
+        width: 58%;
+
+    }
+
+    br {
+        visibility: hidden;
+        display: none;
+    }
+
+    .follow-links {
+        border-bottom: 8px solid red;
+        padding-left: 3px;
+        margin-left: 48px;
+    }
+
+    .workshop-link ul {
+        border-top: 4px solid black;
+        padding-right: 60px;
+        margin-right: 15px;
+        padding-top: 10px;
+    }
+
+}

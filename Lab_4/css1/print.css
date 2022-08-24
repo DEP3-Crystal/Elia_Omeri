@@ -1,0 +1,36 @@
+.hide {
+    visibility: hidden;
+    display: none;
+}
+
+img {
+    position: relative;
+    top: 70px;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div>a,
+div>p {
+    color: black;
+
+}
+
+h1 {
+    position: relative;
+    top: -270px;
+}
+
+h3,
+.two>p {
+    top: -30px;
+    position: relative;
+}
+
+.row-2,
+.container {
+    border: none;
+    box-shadow: none;
+}
