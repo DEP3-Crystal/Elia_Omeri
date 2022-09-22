@@ -1,8 +1,8 @@
 
 document.body.style.fontFamily='Arial, sans-serif';
-document.getElementById("nickname").innerHTML='Elia';
-document.getElementById("favorites").innerHTML='favorites';
-document.getElementById("hometown").innerHTML='Durres';
+document.getElementById("nickname").textContent='Elia';
+document.getElementById("favorites").textContent='favorites';
+document.getElementById("hometown").textContent='Durres';
 var variable = document.getElementsByTagName('li');
 for(let i=0;i<variable.length;i++){
     variable[i].className='list';
