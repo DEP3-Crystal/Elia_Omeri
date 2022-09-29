@@ -4,7 +4,7 @@ var dogTimer = null;
 let speed = null;
 var timeout = setTimeout(() => {
     alert("Session expired!")
-}, 5000);
+}, 30000);
 
 
 // Move the image on screen with 10px
