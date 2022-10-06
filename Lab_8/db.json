@@ -16,11 +16,7 @@
       "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_7613.jpg"
     },
     {
-      "name": "example",
-      "id": 4
-    },
-    {
-      "id": 5,
+      "id": 4,
       "name": "HOUND",
       "img": "https://images.dog.ceo/breeds/hound-afghan/n02088094_2626.jpg"
     }
