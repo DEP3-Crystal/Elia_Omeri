@@ -1,14 +1,9 @@
 {
   "dogs": [
     {
-      "name": "CHIHUAHUAAA",
+      "name": "CHIHUAHUA",
       "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_7613.jpg",
       "id": 3
-    },
-    {
-      "id": 4,
-      "name": "HOUND",
-      "img": "https://images.dog.ceo/breeds/hound-afghan/n02088094_2626.jpg"
     },
     {
       "name": "HOUND",
@@ -19,6 +14,16 @@
       "name": "Puppy",
       "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=640:*",
       "id": 6
+    },
+    {
+      "name": "POPI",
+      "img": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg",
+      "id": 7
+    },
+    {
+      "name": "LANA",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf70i10lZNUmlA4yU8cIYpwGhM7OzSdS24CNeT96NboOTBd1taUxHIh1lT_gmW97qivcQ&usqp=CAU",
+      "id": 8
     }
   ]
 }

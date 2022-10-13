@@ -49,8 +49,10 @@ function getDogs() {
 }
 
 function renderForm() {
-  const form = document.createElement('form')
-  const name = document.createElement('input')
+  const form = document.createElement('form');
+  form.setAttribute('style','padding-left:300px;');
+  const name = document.createElement('input');
+  name.setAttribute('style','font-size:25px');
   name.placeholder = 'name';
   name.type = 'text';
   name.id = 'name';
@@ -58,13 +60,16 @@ function renderForm() {
   img.placeholder = 'img';
   img.type = 'text';
   img.id = 'img';
+  img.setAttribute('style','font-size:25px; margin:10px');
   const addButton = document.createElement('button');
   addButton.textContent = 'Add';
   addButton.type = 'button';
+  addButton.setAttribute('style','font-size:25px; margin:10px;border: solid red');
   addButton.addEventListener('click', addDog);
   const updateButton = document.createElement('button');
   updateButton.textContent = 'Update';
   updateButton.type = 'button';
+  updateButton.setAttribute('style','font-size:25px; margin:10px;border: solid red');
   updateButton.addEventListener('click', () => updateDog(updateId));
   form.appendChild(name);
   form.appendChild(img);
@@ -72,7 +77,6 @@ function renderForm() {
   form.appendChild(updateButton);
   formContainer.appendChild(form)
 }
-
 
 async function addDog() {
   const name = document.getElementById('name').value;
@@ -155,6 +159,7 @@ function renderDogs(dogList) {
     const list = document.createElement('li');
     const img = document.createElement('img');
     img.src = dog.img;
+    img.setAttribute('style','width:40%; padding-left:200px; padding-right:30px');
     const name = document.createElement("label");
     name.textContent = dog.name;
     name.setAttribute('style', 'font-size:25px ; font-weight:bold')
@@ -162,11 +167,11 @@ function renderDogs(dogList) {
     editButton.type = 'button';
     editButton.textContent = 'Edit Dog';
     editButton.addEventListener('click', () => updateForm(dog));
-    editButton.setAttribute('style', 'font-size:20px');
+    editButton.setAttribute('style', 'font-size:25px;margin:10px;border: solid red');
     const deleteButton = document.createElement('button');
     deleteButton.type = 'button';
     deleteButton.textContent = 'Delete';
-    deleteButton.setAttribute('style', 'font-size:20px');
+    deleteButton.setAttribute('style', 'font-size:25px; margin:10px; border: solid red');
     deleteButton.addEventListener('click', () => deleteDog(dog.id));
 
     list.setAttribute('style', 'display:flex; align-items:center;');
