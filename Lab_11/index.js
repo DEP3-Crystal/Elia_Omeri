@@ -89,6 +89,7 @@ app.delete("/dogs/:id", (req, res) => {
  
 });
 
+
 // Reading function from db.json file
 function readJSONFile() {
   return JSON.parse(fs.readFileSync("db.json"))["dogs"];
