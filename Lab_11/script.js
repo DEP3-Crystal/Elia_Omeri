@@ -37,11 +37,10 @@ function renderNav() {
   root.appendChild(nav);
 }
 
-function renderMain() {
   const main = document.createElement('main');
   main.id = 'main';
-  root.appendChild(main);
-}
+ 
+
 
 function getArticles() {
   fetch('http://localhost:3000/articles')
@@ -53,6 +52,7 @@ function getArticles() {
       }
 
       response.json().then(function (data) {
+        removeRootChildren();
         renderArticles(data);
         console.log(data)
       });
@@ -61,7 +61,6 @@ function getArticles() {
       console.log('Fetch Error :-S', err);
     });
 }
-
 
 function renderArticles(articlesList) {
   const main = document.getElementById('main');
@@ -134,12 +133,12 @@ function renderArticles(articlesList) {
     });
     divAfterDiv.appendChild(button3);
     article.appendChild(divAfterDiv);
-
+    if(item.id<=3){
     main.appendChild(article)
-
+    }
   })
 }
-
+let nr = 0;
 function addFooter() {
   const footer = document.createElement('footer');
   footer.className = 'footer';
@@ -149,13 +148,21 @@ function addFooter() {
   const button5 = document.createElement('button');
   button5.classList.add('footer__link', 'footer__link--next');
   button5.textContent = 'next';
-  // button5.addEventListener('click',function(articlesList){
-  //   getArticles(articlesList[3]);
-  // })
+   button5.addEventListener('click',function(){
+        nr++;
+        getArticles().forEach((article) => {
+         if(article.id>3){
+           main.appendChild(article); 
+         }
+        }
+        )
+        getArticles();
+        
+      }) 
   footer.appendChild(button4);
   footer.appendChild(button5);
   root.appendChild(footer);
-}
+};
 
 
 const divModalOverlay = document.createElement('div');
@@ -187,7 +194,7 @@ inputList.forEach((input) => {
 });
 
 
-function addArticle() {
+async function addArticle() {
   var title = document.getElementById('title').value;
   var tag = document.getElementById('tag').value;
   var author = document.getElementById('author').value;
@@ -207,7 +214,7 @@ function addArticle() {
     content
   }
 
-  const response = fetch('http://localhost:3000/articles', {
+  const response =await fetch('http://localhost:3000/articles', {
     method: 'POST',
     headers: {
       "Content-type": "application/json"
@@ -280,7 +287,16 @@ async function updateArticle(id) {
 }
 
 function clearForm() {
-  updateForm('');
+  updateForm({
+    "id": "",
+    "title": "",
+    "tag": "",
+    "author": "",
+    "date": "",
+    "imgUrl": "",
+    "saying": "",
+    "content": ""
+  });
 }
 
 
@@ -300,6 +316,7 @@ const button6 = document.createElement('button');
 button6.className = 'button';
 button6.textContent = 'Cancel';
 button6.addEventListener('click', function () {
+  clearForm();
   divModalOverlay.style.display = "none";
 });
 const button7 = document.createElement('button');
@@ -312,6 +329,7 @@ button7.addEventListener('click', () => {
   else {
     addArticle();
   }
+  clearForm();
 });
 divv.appendChild(button6);
 divv.appendChild(button7);
@@ -333,11 +351,22 @@ function showForm() {
     divModalOverlay.style.display = "flex";
   }
 }
+function removeRootChildren() {
+
+  // Remove all node from main
+
+  while (main.firstChild) {
+
+    main.removeChild(main.lastChild);
+
+  }
+
+}
 
 function initFunction() {
   renderNav();
   addArticleButton();
-  renderMain();
+  root.appendChild(main);
   getArticles();
   addFooter();
   showForm();

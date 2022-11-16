@@ -1,10 +1,5 @@
 {
-  "dogs": [ 
-    {
-      "id": 1,
-      "name": "AFFENPINSCHER",
-      "img": "https://images.dog.ceo/breeds/affenpinscher/n02110627_8099.jpg"
-    },
+  "dogs": [
     {
       "id": 2,
       "name": "AKITA",
@@ -19,6 +14,11 @@
       "id": 4,
       "name": "HOUND",
       "img": "https://images.dog.ceo/breeds/hound-afghan/n02088094_2626.jpg"
+    },
+    {
+      "name": "",
+      "img": "[object HTMLInputElement]",
+      "id": 5
     }
   ]
 }
