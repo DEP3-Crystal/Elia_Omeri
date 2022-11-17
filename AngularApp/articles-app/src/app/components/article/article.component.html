@@ -11,15 +11,15 @@
         <button type="button" class="actions__btn" (click)="triggerEditArticle()">Edit</button>
         <button type="button" class="actions__btn" (click)="deleteArticle()">Delete</button>
     </div>
-    
-    <img src="assets/{{article.imgUrl}}" alt="article.imgUrl" />
+
+    <img src="{{article.imgUrl}}" alt="article.imgUrl" />
     <div class="content__container">
         <p>{{article.saying}}</p>
         <p *ngIf="readMore">{{article.content.substring(0,200)}}...</p>
         <p *ngIf="readLess">{{article.content}}</p>
     </div>
     <div class="readmore__container">
-        <button *ngIf="readMore" type="button" class="button" (click)="readMoreOrLess()" >Read More</button>
+        <button *ngIf="readMore" type="button" class="button" (click)="readMoreOrLess()">Read More</button>
         <button *ngIf="readLess" type="button" class="button" (click)="readMoreOrLess()">Read Less</button>
     </div>
 </article>

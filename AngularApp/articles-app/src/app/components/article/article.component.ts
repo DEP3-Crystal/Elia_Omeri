@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output, OnDestroy } from '@angular/core';
 import { Article } from 'src/app/models/Article';
 import { Subscription } from 'rxjs';
 import { ArticleService } from 'src/app/services/article.service';
@@ -7,14 +7,14 @@ import { ArticleService } from 'src/app/services/article.service';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
-export class ArticleComponent implements OnInit {
-  
+export class ArticleComponent implements OnInit, OnDestroy {
+
   @Input()
   article: Article = new Article();
 
   @Output()
   getArticlesEvent = new EventEmitter<string>();
-  
+
   @Output()
   editArticlesEvent = new EventEmitter<Article>();
   readLess: boolean = false;
@@ -25,34 +25,34 @@ export class ArticleComponent implements OnInit {
   constructor(
     private articleService: ArticleService
   ) { }
-  
-  ngOnInit():void {
-    
+
+  ngOnInit(): void {
+
   }
 
   ngOnDestroy(): void {
     if (this.articleDeleteSubscription) {
       this.articleDeleteSubscription.unsubscribe();
     }
-    if(this.articleUpdateSubscription){
+    if (this.articleUpdateSubscription) {
       this.articleUpdateSubscription.unsubscribe();
     }
   }
   deleteArticle() {
-    this.articleDeleteSubscription = this.articleService.deleteArticle(this.article.id ? this.article.id: 0).subscribe(() => {
+    this.articleDeleteSubscription = this.articleService.deleteArticle(this.article.id ? this.article.id : 0).subscribe(() => {
       this.triggerGetArticles();
     })
   }
 
-  triggerEditArticle(){ 
+  triggerEditArticle() {
     this.editArticlesEvent.emit(this.article);
   }
-  
+
   triggerGetArticles() {
     this.getArticlesEvent.emit('');
   }
 
-  readMoreOrLess(){
+  readMoreOrLess() {
     this.readLess = !this.readLess;
     this.readMore = !this.readMore;
   }

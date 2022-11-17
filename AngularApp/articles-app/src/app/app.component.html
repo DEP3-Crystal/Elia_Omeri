@@ -1,10 +1,11 @@
 <div class="container">
-<app-navbar (onAddClick)="clicked = !clicked"></app-navbar>
-<main>
-<app-article
-*ngFor="let article of articles" [article]="article" (editArticlesEvent)="editArticle($event)" (getArticlesEvent)="getArticles()">
-</app-article>
-</main>
-<app-add-article (onCancelClick)="saveForm()" [SelectedArticle]="selectedArticle" 
-(afterSaveAndEditEvent)="saveForm()" (afterSaveAndAddEvent)="saveForm()" (editForm)="editArticle($event)" *ngIf="clicked"></app-add-article>
+    <app-navbar (onAddClick)="clicked = true"></app-navbar>
+    <main>
+        <app-article *ngFor="let article of articles" [article]="article" (editArticlesEvent)="editArticle($event)"
+            (getArticlesEvent)="getArticles()">
+        </app-article>
+    </main>
+    <app-add-article (onCancelClick)="saveForm()" [SelectedArticle]="selectedArticle"
+        (afterSaveAndEditEvent)="saveForm()" (afterSaveAndAddEvent)="saveForm()" (editForm)="editArticle($event)"
+        *ngIf="clicked"></app-add-article>
 </div>
